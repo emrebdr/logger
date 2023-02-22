@@ -2,6 +2,7 @@ package logger
 
 import (
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/fatih/color"
@@ -25,6 +26,7 @@ func LogError(v ...interface{}) {
 	str := fmt.Sprintf("%s [ERROR] ", currentTime)
 	fmt.Printf(RED(str) + " ")
 	fmt.Println(v...)
+	os.Exit(1)
 }
 
 func LogSuccess(v ...interface{}) {
